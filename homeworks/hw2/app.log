@@ -1,0 +1,44 @@
+2025-03-16 22:45:51,376 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:3000
+ * Running on http://172.31.72.8:3000
+2025-03-16 22:45:51,376 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-16 22:45:51,377 - INFO -  * Restarting with stat
+2025-03-16 22:45:55,833 - WARNING -  * Debugger is active!
+2025-03-16 22:45:55,833 - INFO -  * Debugger PIN: 127-811-756
+2025-03-16 22:46:08,493 - INFO - Removing class: Technology
+2025-03-16 22:46:08,494 - INFO - Successfully removed class: Technology
+2025-03-16 22:46:08,495 - INFO - 127.0.0.1 - - [16/Mar/2025 22:46:08] "POST /api/v1/classes/remove/ HTTP/1.1" 200 -
+2025-03-16 22:46:15,777 - INFO - Removing class: Movies
+2025-03-16 22:46:15,777 - INFO - Successfully removed class: Movies
+2025-03-16 22:46:15,778 - INFO - 127.0.0.1 - - [16/Mar/2025 22:46:15] "POST /api/v1/classes/remove/ HTTP/1.1" 200 -
+2025-03-16 22:46:19,364 - INFO - Removing class: test
+2025-03-16 22:46:19,365 - INFO - 127.0.0.1 - - [16/Mar/2025 22:46:19] "[33mPOST /api/v1/classes/remove/ HTTP/1.1[0m" 404 -
+2025-03-16 22:46:35,105 - INFO - Adding class: Movies
+2025-03-16 22:46:35,105 - INFO - Loading existing classes...
+2025-03-16 22:46:35,105 - INFO - Successfully added new class: Movies
+2025-03-16 22:46:35,106 - INFO - 127.0.0.1 - - [16/Mar/2025 22:46:35] "POST /api/v1/classes/add/ HTTP/1.1" 200 -
+2025-03-16 22:46:44,727 - INFO - Adding class: Technology
+2025-03-16 22:46:44,727 - INFO - Loading existing classes...
+2025-03-16 22:46:44,728 - INFO - Successfully added new class: Technology
+2025-03-16 22:46:44,728 - INFO - 127.0.0.1 - - [16/Mar/2025 22:46:44] "POST /api/v1/classes/add/ HTTP/1.1" 200 -
+2025-03-16 22:46:51,646 - INFO - Classifying the following: The new Iphone is HERE! Get your new IPhone 18 when you sign-up for Apple-AD. Apple-AD specifically tailors its ads for YOU! So you no longer get those ads that are not relevent to you. Remeber the IPhone comes with built in AI to see how you interact with certain ads. When you opt in and agree to the Terms you will be ellgible for get the new IPhone 18
+2025-03-16 22:46:51,687 - INFO - Computing embeddings for classes: ['Work', 'Sports', 'Food', 'Movies', 'Technology']
+2025-03-16 22:46:51,708 - INFO - Results: 
+ [{'class': 'Technology', 'similarity': 0.047428298741579056}, {'class': 'Work', 'similarity': 0.03664332255721092}, {'class': 'Movies', 'similarity': 0.017065908759832382}, {'class': 'Sports', 'similarity': -0.02837473526597023}, {'class': 'Food', 'similarity': -0.057128291577100754}]
+2025-03-16 22:46:51,709 - INFO - 127.0.0.1 - - [16/Mar/2025 22:46:51] "POST /api/v1/classify/ HTTP/1.1" 200 -
+2025-03-16 22:47:00,763 - INFO - Classifying the following: Here are some movies coming to theaters near you! The clove, The Super Alien Thing, WATCHOUT, Closed. These movies all have a rating of 9.9/10 from IMDB. Tickets are only 10$ if you redeem this code at the theaters. Code only applies to the movies listed above
+2025-03-16 22:47:00,792 - INFO - Computing embeddings for classes: ['Work', 'Sports', 'Food', 'Movies', 'Technology']
+2025-03-16 22:47:00,813 - INFO - Results: 
+ [{'class': 'Movies', 'similarity': 0.419933944940567}, {'class': 'Food', 'similarity': 0.08232740312814713}, {'class': 'Work', 'similarity': 0.03552911430597305}, {'class': 'Technology', 'similarity': 0.03404936194419861}, {'class': 'Sports', 'similarity': 0.03281433880329132}]
+2025-03-16 22:47:00,813 - INFO - 127.0.0.1 - - [16/Mar/2025 22:47:00] "POST /api/v1/classify/ HTTP/1.1" 200 -
+2025-03-16 22:47:10,889 - INFO - Classifying the following: This is an automated message: Please review the following technologies/applications that must be updated on your PC: VSCODE, COMPUTER CODE, COMPUTER PROTECT, SPORTING_SECURITY,WORK.USER.NAME,SOME_DRIVER
+2025-03-16 22:47:10,914 - INFO - Computing embeddings for classes: ['Work', 'Sports', 'Food', 'Movies', 'Technology']
+2025-03-16 22:47:10,935 - INFO - Results: 
+ [{'class': 'Technology', 'similarity': 0.13611871004104614}, {'class': 'Work', 'similarity': 0.1104317307472229}, {'class': 'Sports', 'similarity': 0.08767526596784592}, {'class': 'Food', 'similarity': 0.0652066245675087}, {'class': 'Movies', 'similarity': 0.04420046508312225}]
+2025-03-16 22:47:10,936 - INFO - 127.0.0.1 - - [16/Mar/2025 22:47:10] "POST /api/v1/classify/ HTTP/1.1" 200 -
+2025-03-16 22:47:23,811 - INFO - Classifying the following: The request from IT has just gone through. Please restart your computer to fully implement the new changes. More information on changes can be found at: work.site.com/index.html
+2025-03-16 22:47:23,834 - INFO - Computing embeddings for classes: ['Work', 'Sports', 'Food', 'Movies', 'Technology']
+2025-03-16 22:47:23,855 - INFO - Results: 
+ [{'class': 'Work', 'similarity': 0.19707123935222626}, {'class': 'Technology', 'similarity': 0.03288203105330467}, {'class': 'Sports', 'similarity': -0.024455001577734947}, {'class': 'Food', 'similarity': -0.0913693904876709}, {'class': 'Movies', 'similarity': -0.15428580343723297}]
+2025-03-16 22:47:23,855 - INFO - 127.0.0.1 - - [16/Mar/2025 22:47:23] "POST /api/v1/classify/ HTTP/1.1" 200 -

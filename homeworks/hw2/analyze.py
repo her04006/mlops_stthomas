@@ -2,6 +2,9 @@ from transformers import pipeline
 from sentence_transformers import SentenceTransformer
 import numpy as np
 import json
+import logging
+
+logging.getLogger(__name__) # get the logger from app.py
 
 sentiment_pipeline = pipeline("sentiment-analysis")
 model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
@@ -29,6 +32,7 @@ def compute_embeddings(custom_classes=None):
     """Compute embeddings for the classes"""
     if custom_classes is None:
         custom_classes = load_classes()
+    logging.info("Computing embeddings for classes: %s", custom_classes)
     embeddings = model.encode(custom_classes)
     return zip(custom_classes, embeddings)
     
@@ -52,5 +56,6 @@ def classify_email(text):
     
     # Sort by similarity score descending
     results.sort(key=lambda x: x["similarity"], reverse=True)
+    logging.info(f"Results: \n {results}")
     
     return results
