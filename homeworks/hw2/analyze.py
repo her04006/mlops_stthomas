@@ -28,9 +28,9 @@ def get_sentiment(text):
 def compute_embeddings(custom_classes=None):
     """Compute embeddings for the classes"""
     if custom_classes is None:
-        classes = load_classes()
-    embeddings = model.encode(classes)
-    return zip(classes, embeddings)
+        custom_classes = load_classes()
+    embeddings = model.encode(custom_classes)
+    return zip(custom_classes, embeddings)
     
 def classify_email(text):
     # Encode the input text
