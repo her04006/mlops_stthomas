@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation</title>
+</head>
+
+<body>
+    <h1>API Documentation</h1>
+
+    <section>
+        <h2>Overview</h2>
+        <p>
+            This API allows you to analyze the sentiment of text by sending a POST request to the endpoint.
+        </p>
+    </section>
+
+    <section>
+        <h2>API Endpoint</h2>
+        <p>
+            The API is accessible at: <code>http://localhost:3000/api/v1/analysis/</code>
+        </p>
+    </section>
+
+    <section>
+        <h2>Request</h2>
+        <p>
+            To analyze a bit of text, send a POST request with a JSON object containing a single field
+            <code>"text"</code> pointing to the image to be analyzed.
+        </p>
+        <pre>
+            <code>
+{
+    "text": "some_text"
+}
+            </code>
+        </pre>
+    </section>
+
+</body>
+
+</html>
