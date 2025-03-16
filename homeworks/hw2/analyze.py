@@ -1,29 +1,44 @@
 from transformers import pipeline
 from sentence_transformers import SentenceTransformer
 import numpy as np
+import json
 
 sentiment_pipeline = pipeline("sentiment-analysis")
 model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
 
-EMAIL_CLASSES = [
-    "Work", "Sports", "Food"
-]
+def load_classes():
+    """Load email classes from the JSON file"""
+    try:
+        with open('classes.json', 'r') as file:
+            data = json.load(file)
+            return data.get('classes', [])
+    except FileNotFoundError:
+        # If file doesn't exist, create it with default classes
+        default_classes = ["Work", "Sports", "Food"]
+        with open('classes.json', 'w') as file:
+            json.dump({"classes": default_classes}, file)
+        return default_classes
+        
 
 def get_sentiment(text):
     response = sentiment_pipeline(text)
     return response
 
-def compute_embeddings(embeddings = EMAIL_CLASSES):
-    embeddings = model.encode(embeddings)
-    return zip(EMAIL_CLASSES, embeddings)
-
+def compute_embeddings(custom_classes=None):
+    """Compute embeddings for the classes"""
+    if custom_classes is None:
+        classes = load_classes()
+    embeddings = model.encode(classes)
+    return zip(classes, embeddings)
+    
 def classify_email(text):
     # Encode the input text
     text_embedding = model.encode([text])[0]
     
     # Get embeddings for all classes
-    class_embeddings = compute_embeddings()
+    classes = load_classes()
+    class_embeddings = compute_embeddings(classes)
     
     # Calculate distances and return results
     results = []
